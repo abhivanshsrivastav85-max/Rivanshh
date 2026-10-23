@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b12">
+  <meta name="description" content="Rivanshh Ecosystem — music, videos, social, study and more.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Rivanshh Ecosystem</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" data-page="home"><span class="brand-mark">R</span><span>Rivanshh<span class="muted"> Ecosystem</span></span></a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav id="mainNav" class="nav">
+        <button class="nav-item active" data-page="home"><span>⌂</span> Home</button>
+        <button class="nav-item" data-page="music"><span>♫</span> Music</button>
+        <button class="nav-item" data-page="tubes"><span>▷</span> Tubes</button>
+        <button class="nav-item" data-page="social"><span>◎</span> Social</button>
+        <button class="nav-item" data-page="connect"><span>◌</span> Connect</button>
+        <button class="nav-item" data-page="study"><span>▤</span> Study with Abhivansh</button>
+        <button class="nav-item" data-page="ai"><span>✧</span> Rivanshh AI</button>
+        <button class="nav-item" data-page="pay"><span>₹</span> Rivanshh Pay</button>
+        <button class="nav-item" data-page="link"><span>↗</span> Rivanshh Link</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-page="profile"><span>◉</span> My Profile</button>
+        <button class="nav-item" data-page="settings"><span>⚙</span> Settings</button>
+        <div class="sidebar-note"><span class="status-dot"></span> Ecosystem workspace<br><small>Local-first preview</small></div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="crumb" id="breadcrumb">Workspace / Home</div>
+        <div class="top-actions">
+          <button class="icon-button" id="installBtn" title="Install app" hidden>⇩</button>
+          <button class="avatar" id="topAvatar" data-page="profile" aria-label="Open profile">A</button>
+        </div>
+      </header>
+      <section id="view" class="view" aria-live="polite"></section>
+    </main>
+  </div>
+  <footer id="playerBar" class="player-bar" hidden>
+    <div class="track-info"><div class="track-cover">♫</div><div><strong id="trackName">Nothing playing</strong><small id="trackMeta">Choose a local audio file</small></div></div>
+    <div class="player-controls"><button id="prevTrack" title="Previous">⏮</button><button id="playPause" class="play-button" title="Play/Pause">▶</button><button id="nextTrack" title="Next">⏭</button></div>
+    <div class="progress-wrap"><span id="currentTime">0:00</span><input id="seekBar" type="range" min="0" max="100" value="0"><span id="duration">0:00</span></div>
+    <button id="closePlayer" class="icon-button" title="Close player">×</button>
+  </footer>
+  <input type="file" id="audioInput" accept="audio/*" multiple hidden>
+  <input type="file" id="avatarInput" accept="image/*" hidden>
+  <input type="file" id="coverInput" accept="image/*" hidden>
+  <audio id="audio" preload="metadata"></audio>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
